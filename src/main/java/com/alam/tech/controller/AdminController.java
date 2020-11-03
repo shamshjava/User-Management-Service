@@ -24,15 +24,15 @@ public class AdminController {
 	@Autowired
 	private UserRepository userRepository;
 	
-	@Autowired
-	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	//@Autowired
+	//private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
 	@PreAuthorize("hasAnyRole('ADMIN')")
 	@PostMapping("/admin/add")
 	public String addUser(@RequestBody User user) {
 		String pwd = user.getPassword();
-		String ePwd = bCryptPasswordEncoder.encode(pwd);
-		user.setPassword(ePwd);
+		//String ePwd = bCryptPasswordEncoder.encode(pwd);
+		user.setPassword(pwd);
 		userRepository.save(user);
 		return "User Created succesfully.";
 	}

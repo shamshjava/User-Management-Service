@@ -1,5 +1,5 @@
 insert into User (user_id, user_name, password)
-values (1, 'shamsh', '$2y$12$g/YAYclkRp5fB8/rBkqOTerQdISQGlIV9.VjkNNTqwvnNJb9Hek/W');
+values (1, 'shamsh', '1234');
  
 
 ---
