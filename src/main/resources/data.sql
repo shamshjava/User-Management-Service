@@ -1,14 +1,3 @@
-insert into User (user_id, user_name, password)
-values (1, 'shamsh', '1234');
- 
-
----
- 
-insert into Role (role_id, role)
-values (1, 'ROLE_ADMIN');
- 
-
----
- 
-insert into user_role (user_id, role_id)
-values (1, 1);
+insert into user values (1, 'shamsh', '1234', 'yes');
+insert into role  values (1, 'ROLE_ADMIN');
+insert into user_role values (1, 1);

@@ -1,3 +1,4 @@
+
 package com.alam.tech.service;
 
 import java.util.Collection;
@@ -13,14 +14,16 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter
+
 @Setter
-public class CustomUserDetails implements UserDetails{
-	
+public class CustomUserDetails implements UserDetails {
+
 	private User user;
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return user.getRole().stream().map(role-> new SimpleGrantedAuthority("ROLE_"+role)).collect(Collectors.toList());
+		return user.getRole().stream().map(role -> new SimpleGrantedAuthority("ROLE_" + role))
+				.collect(Collectors.toList());
 	}
 
 	@Override
@@ -33,27 +36,20 @@ public class CustomUserDetails implements UserDetails{
 		return user.getUserName();
 	}
 
-	@Override
-	public boolean isAccountNonExpired() {
-		// TODO Auto-generated method stub
-		return true;
+	@Override public boolean isAccountNonExpired() { // TODO Auto-generated method stub
+		return true; 
+	}
+
+	@Override public boolean isAccountNonLocked() { // TODO Auto-generated method method stub
+		return true; 
+	}
+
+	@Override public boolean isCredentialsNonExpired() { // TODO Auto-generated method stub
+		return true; 
 	}
 
 	@Override
-	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
-	@Override
-	public boolean isCredentialsNonExpired() {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
-	@Override
-	public boolean isEnabled() {
-		// TODO Auto-generated method stub
+	public boolean isEnabled() { // TODO Auto-generated method stub
 		return true;
 	}
 

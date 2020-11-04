@@ -24,20 +24,17 @@ public class SwaggerConfig {
 	}
 
 	private Predicate<String> postPaths() {
-		return (regex("/user.*"));
+		return (regex("/rest.*"));
 	}
 
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder().title("User Management Service API")
 				.description("User Management Service API")
-				.termsOfServiceUrl("http://javainuse.com")
-				.license("JavaInUse License")
-				.licenseUrl("javainuse@gmail.com").version("1.0").build();
+				.build();
 	}
 	
-	/*
-	 * @Bean public BCryptPasswordEncoder bCryptPasswordEncoder() { return new
-	 * BCryptPasswordEncoder(); }
-	 */
+	
+	 
+	
 
 }
